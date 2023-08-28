@@ -20,4 +20,4 @@ jobs:
         run: npm install
 
       - name: Run ESLint
-        run: eslint src/* # Adjust the linting command as needed
+        run: npm run lint # Adjust the linting command as needed
