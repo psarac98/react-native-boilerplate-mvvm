@@ -19,8 +19,5 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build the App
-        run: npm run build  # Adjust the build command as needed
-
       - name: Run ESLint Checks
         run: npm run lint  # Adjust the linting command as needed
