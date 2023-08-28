@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
 import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import TabNavigation from './tabNavigation';
@@ -10,7 +11,7 @@ type RootNavigationParamList = {
 
 const RootStack = createNativeStackNavigator<RootNavigationParamList>();
 
-const RootNavigation = () => {
+function RootNavigation() {
   const insets = useSafeAreaInsets();
 
   return (
@@ -34,6 +35,6 @@ const RootNavigation = () => {
       </View>
     </NavigationContainer>
   );
-};
+}
 
 export default RootNavigation;

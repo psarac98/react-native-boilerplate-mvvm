@@ -1,12 +1,15 @@
-import React, { FC } from 'react';
-
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ScreenNavigationProps } from '~/routes/stacks/types';
+import React from 'react';
 import HomeScreen from '~/screens/HomeScreen';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<HomeStackParamList>();
+// type PlaceDetailScreenProps = { placeID: string; title?: string };
+// type HomeStackProps = ScreenNavigationProps;
+type HomeStackParamList = {
+  HomeScreen: undefined;
+};
 
-const HomeStack: FC<ScreenNavigationProps> = ({ route }) => {
+function HomeStack() {
   return (
     <Stack.Navigator
       initialRouteName="HomeScreen"
@@ -24,6 +27,6 @@ const HomeStack: FC<ScreenNavigationProps> = ({ route }) => {
       />
     </Stack.Navigator>
   );
-};
+}
 
 export default HomeStack;
