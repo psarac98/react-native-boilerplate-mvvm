@@ -1,10 +1,10 @@
-name: Lint React Native Expo App
+name: ${{ github.ref }}
 
 on:
-  pull_request:
-  
+  pull-request:
+
 jobs:
-  lint:
+  build-and-lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,5 +19,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run ESLint
-        run: npm run lint # Adjust the linting command as needed
+      - name: Build the App
+        run: npm run build  # Adjust the build command as needed
+
+      - name: Run ESLint Checks
+        run: npm run lint  # Adjust the linting command as needed
