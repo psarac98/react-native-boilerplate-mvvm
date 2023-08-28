@@ -1,4 +1,4 @@
-name: ${{ github.ref }}
+name: Lint, Test and Build Feature Branch
 
 on:
   pull_request:
