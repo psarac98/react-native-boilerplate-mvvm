@@ -27,9 +27,9 @@ const RootNavigation = () => {
       >
         <RootStack.Navigator>
           <RootStack.Screen
+            options={{ headerShown: false }}
             component={TabNavigation}
             name="Main"
-            options={{ headerShown: false }}
           />
         </RootStack.Navigator>
       </View>

@@ -5,7 +5,7 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "ignorePatterns": ["node_modules/"],
-  "plugins": ["@typescript-eslint", "react", "prettier"],
+  "plugins": ["@typescript-eslint", "react", "prettier","typescript-sort-keys"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -16,6 +16,8 @@
     "project": "./tsconfig.json"
   },
   "rules": {
+    "typescript-sort-keys/interface": "error",
+    "typescript-sort-keys/string-enum": "error",
     "import/no-unresolved": 0,
     "react/jsx-filename-extension": [
       1,
