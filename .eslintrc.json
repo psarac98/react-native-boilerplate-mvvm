@@ -4,6 +4,7 @@
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended"
   ],
+  // "insertPragma": false,
   "ignorePatterns": ["node_modules/"],
   "plugins": ["@typescript-eslint", "react", "prettier","typescript-sort-keys"],
   "parser": "@typescript-eslint/parser",
@@ -16,6 +17,7 @@
     "project": "./tsconfig.json"
   },
   "rules": {
+    "react/react-in-jsx-scope": "off",
     "typescript-sort-keys/interface": "error",
     "typescript-sort-keys/string-enum": "error",
     "import/no-unresolved": 0,
