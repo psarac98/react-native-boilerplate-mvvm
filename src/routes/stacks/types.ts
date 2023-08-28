@@ -6,6 +6,6 @@ type ScreenRouteProp = RouteProp<ParamListBase, string>;
 type ScreenNavigationProp = NativeStackNavigationProp<ParamListBase, string>;
 
 export type ScreenNavigationProps = {
-  route: ScreenRouteProp;
   navigation: ScreenNavigationProp;
+  route: ScreenRouteProp;
 };
