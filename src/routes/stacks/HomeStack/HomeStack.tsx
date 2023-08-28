@@ -1,32 +1,26 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import React from 'react';
+import React, { FC } from 'react';
 import HomeScreen from '~/screens/HomeScreen';
+import { ScreenNavigationProps } from '../types';
 
-const Stack = createNativeStackNavigator<HomeStackParamList>();
-// type PlaceDetailScreenProps = { placeID: string; title?: string };
-// type HomeStackProps = ScreenNavigationProps;
-type HomeStackParamList = {
-  HomeScreen: undefined;
-};
+const Stack = createNativeStackNavigator();
 
-function HomeStack() {
-  return (
-    <Stack.Navigator
-      initialRouteName="HomeScreen"
-      screenOptions={{
-        headerTitle: '',
-        headerBackTitleVisible: false,
+const HomeStack: FC<ScreenNavigationProps> = () => (
+  <Stack.Navigator
+    initialRouteName="HomeScreen"
+    screenOptions={{
+      headerTitle: '',
+      headerBackTitleVisible: false,
+    }}
+  >
+    <Stack.Screen
+      name="HomeScreen"
+      options={{
+        headerTitle: 'Home Screen',
       }}
-    >
-      <Stack.Screen
-        name="HomeScreen"
-        options={{
-          headerTitle: 'Home Screen',
-        }}
-        component={HomeScreen}
-      />
-    </Stack.Navigator>
-  );
-}
+      component={HomeScreen}
+    />
+  </Stack.Navigator>
+);
 
 export default HomeStack;

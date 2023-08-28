@@ -11,7 +11,7 @@ type RootNavigationParamList = {
 
 const RootStack = createNativeStackNavigator<RootNavigationParamList>();
 
-function RootNavigation() {
+const RootNavigation = () => {
   const insets = useSafeAreaInsets();
 
   return (
@@ -35,6 +35,6 @@ function RootNavigation() {
       </View>
     </NavigationContainer>
   );
-}
+};
 
 export default RootNavigation;
