@@ -1,7 +1,7 @@
 name: ${{ github.ref }}
 
 on:
-  pull-request:
+  pull_request:
 
 jobs:
   build-and-lint:
