@@ -1,10 +1,8 @@
 name: Lint React Native Expo App
 
 on:
-  push:
-    branches:
-      - main  # Adjust the branch name as needed
-
+  pull_request:
+  
 jobs:
   lint:
     runs-on: ubuntu-latest
