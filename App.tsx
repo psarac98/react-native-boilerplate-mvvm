@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import RootNavigation from './src/routes/RootNavigation';
+import RootNavigation from './src/navigation/RootNavigation';
 
 const App = () => (
   <SafeAreaProvider>
