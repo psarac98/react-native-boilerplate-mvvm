@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  coverage:
+  test-coverage:
     runs-on: ubuntu-latest
 
     steps:
@@ -12,10 +12,10 @@ jobs:
 
       - uses: ArtiomTr/jest-coverage-report-action@v2
 
-  build-and-lint:
+  lint:
     runs-on: ubuntu-latest
-    needs: coverage
-    if: needs.coverage.result == 'success'
+    needs: test-coverage
+    if: needs.test-coverage.result == 'success'
 
     steps:
       - uses: actions/checkout@v2
