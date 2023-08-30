@@ -10,13 +10,30 @@
     "prepare": "husky install",
     "lint": "eslint src/*",
     "lint:fix": "eslint --fix src/*",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --watch --coverage=false --changedSince=origin/main"
   },
   "jest": {
     "preset": "jest-expo",
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
-    ]
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/babel.config.js",
+      "!**/jest.setup.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 0,
+        "branches": 0,
+        "functions": 0,
+        "lines": 0
+      }
+    }
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.8",
