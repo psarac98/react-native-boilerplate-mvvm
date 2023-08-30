@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react-native";
+import { act, renderHook } from "@testing-library/react-native";
 import useToggle from "~/custom-hooks/useToggle";
 
 
