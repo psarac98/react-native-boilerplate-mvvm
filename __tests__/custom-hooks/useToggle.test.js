@@ -1,6 +1,6 @@
 import { act, renderHook } from "@testing-library/react-native";
+import useToggle from "~/custom-hooks/useToggle";
 
-import useToggle from "@/custom-hooks/useToggle";
 
 const renderCustomHook = (initialValue = undefined) => {
   return renderHook(() => useToggle(initialValue));
