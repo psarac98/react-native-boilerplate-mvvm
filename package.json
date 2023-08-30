@@ -11,7 +11,8 @@
     "lint": "eslint src/*",
     "lint:fix": "eslint --fix src/*",
     "test": "jest",
-    "test:coverage": "jest --watch --coverage=false --changedSince=origin/main"
+    "test:coverage": "jest --coverage",
+    "test-coverage-only-changed": "jest --coverage=true --changedSince=origin/main"
   },
   "jest": {
     "preset": "jest-expo",
@@ -28,10 +29,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 0,
-        "branches": 0,
-        "functions": 0,
-        "lines": 0
+        "statements": 80,
+        "branches": 80,
+        "functions": 80,
+        "lines": 80
       }
     }
   },
