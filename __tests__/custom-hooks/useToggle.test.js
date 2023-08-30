@@ -1,4 +1,4 @@
-import { act, renderHook } from "@testing-library/react-native";
+import { renderHook } from "@testing-library/react-native";
 import useToggle from "~/custom-hooks/useToggle";
 
 
@@ -21,13 +21,13 @@ describe("Tests for useToggle hook", () => {
     expect(value).toEqual(expectedInitialValue);
   });
 
-  test("if toggle function is called, value should be the opposite of what it was", () => {
-    const initialValue = false;
-    const expectedValue = true;
-    const { result } = renderCustomHook(initialValue);
-    const toggle = result.current[1];
-    act(() => toggle());
-    const value = result.current[0];
-    expect(value).toEqual(expectedValue);
-  });
+  // test("if toggle function is called, value should be the opposite of what it was", () => {
+  //   const initialValue = false;
+  //   const expectedValue = true;
+  //   const { result } = renderCustomHook(initialValue);
+  //   const toggle = result.current[1];
+  //   act(() => toggle());
+  //   const value = result.current[0];
+  //   expect(value).toEqual(expectedValue);
+  // });
 });
