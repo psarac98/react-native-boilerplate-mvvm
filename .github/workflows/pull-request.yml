@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Check Branch Name Convention
-        run: echo running on branch ${GITHUB_REF##*/}
+        run: echo running on branch ${{ github.head_ref || github.ref_name }}
 
   test-coverage:
     runs-on: ubuntu-latest
