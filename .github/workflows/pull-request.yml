@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: deepakputhraya/action-branch-name@master
         with:
-          regex: '([a-z])+\/([a-z])+' # Regex the branch should match. This example enforces grouping
+          regex: '^(feat|stable|fix|docs|style|refactor|perf|test|chore|ci)\/[a-z0-9]+.*$' # Updated regex
           allowed_prefixes: 'feat,stable,fix,docs,style,refactor,perf,test,chore,ci' # All branches should start with the given prefix
           ignore: master,develop # Ignore exactly matching branch names from convention
           min_length: 5 # Min length of the branch name
