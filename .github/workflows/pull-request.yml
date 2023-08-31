@@ -1,12 +1,24 @@
-name: Test & Lint Feature Branch
+name: Pull Request Workflow
 
 on:
   pull_request:
 
 jobs:
+  branch-naming-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: deepakputhraya/action-branch-name@master
+        with:
+          regex: '([a-z])+\/([a-z])+' # Regex the branch should match. This example enforces grouping
+          allowed_prefixes: 'feature,stable,fix,docs,style,refactor,perf,test,chore,ci' # All branches should start with the given prefix
+          ignore: master,develop # Ignore exactly matching branch names from convention
+          min_length: 5 # Min length of the branch name
+          max_length: 50 # Max length of the branch name
+
   test-coverage:
     runs-on: ubuntu-latest
-
+    needs: branch-naming-rules
+    if: needs.branch-naming-rules.result == 'success'
     steps:
       - uses: actions/checkout@v2
 
@@ -30,3 +42,4 @@ jobs:
 
       - name: Run ESLint Checks
         run: npm run lint
+

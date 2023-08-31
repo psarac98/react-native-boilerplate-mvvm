@@ -2,7 +2,7 @@ import { Text, View } from 'react-native';
 
 const HomeScreen = () => (
   <View>
-    <Text>HomeScreen</Text>
+    <Text>Home</Text>
   </View>
 );
 
