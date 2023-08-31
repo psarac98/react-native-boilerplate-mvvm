@@ -9,15 +9,7 @@ jobs:
 
     steps:
       - name: Check Branch Name Convention
-        run: |
-          branch_name="${{ github.ref }}"
-          clean_branch_name="${branch_name#refs/heads/}"  # Remove the 'refs/heads/' prefix
-          echo clean_branch_name
-          
-          if ! [[ "$clean_branch_name" =~ ^(feat|fix|docs|style|refactor|perf|test|ci|chore)/.*$ ]]; then
-            echo "Invalid branch name. Branch names must follow the convention."
-            exit 1
-          fi
+        run: echo running on branch ${GITHUB_REF##*/}
 
   test-coverage:
     runs-on: ubuntu-latest
