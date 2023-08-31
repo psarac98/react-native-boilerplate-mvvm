@@ -12,7 +12,8 @@
     "lint:fix": "eslint --fix src/*",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test-coverage-only-changed": "jest --coverage=true --changedSince=origin/main"
+    "test-coverage-only-changed": "jest --coverage=true --changedSince=origin/main",
+    "commit": "cz"
   },
   "jest": {
     "preset": "jest-expo",
@@ -40,6 +41,7 @@
     "@react-navigation/bottom-tabs": "^6.5.8",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
+    "commitizen": "^4.3.0",
     "expo": "~49.0.7",
     "expo-status-bar": "~1.6.0",
     "expo-updates": "~0.18.12",
