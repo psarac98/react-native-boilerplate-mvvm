@@ -2,6 +2,8 @@ name: Test & Lint Feature Branch
 
 on:
   pull_request:
+    types:
+      - opened
 
 jobs:
   enforce-branch-naming:
@@ -9,7 +11,12 @@ jobs:
 
     steps:
       - name: Check Branch Name Convention
-        run: echo running on branch ${{ github.head_ref || github.ref_name }}
+        run: |
+          branch_name=$(echo ${{ github.head_ref || github.ref_name }} | sed -e 's,.*/\(.*\),\1,')
+          if [[ ! "$branch_name" =~ ^(feat|fix|docs|style|refactor|perf|test|ci|chore)/.*$ ]]; then
+            echo "Invalid branch name. Branch names must follow the convention."
+            exit 1
+          fi
 
   test-coverage:
     runs-on: ubuntu-latest
