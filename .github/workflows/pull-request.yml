@@ -2,8 +2,6 @@ name: Test & Lint Feature Branch
 
 on:
   pull_request:
-    types:
-      - opened
 
 jobs:
   enforce-branch-naming:
