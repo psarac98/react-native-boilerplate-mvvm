@@ -4,22 +4,21 @@ on:
   pull_request:
 
 jobs:
-  enforce-branch-naming:
+  branch-naming-rules:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check Branch Name Convention
-        run: |
-          branch_name=$(echo ${{ github.head_ref || github.ref_name }} | sed -e 's,.*/\(.*\),\1,')
-          if [[ ! "$branch_name" =~ ^(feat|fix|docs|style|refactor|perf|test|ci|chore)/.*$ ]]; then
-            echo "Invalid branch name. Branch names must follow the convention."
-            exit 1
-          fi
+      - uses: deepakputhraya/action-branch-name@master
+        with:
+          regex: '([a-z])+\/([a-z])+' # Regex the branch should match. This example enforces grouping
+          allowed_prefixes: 'feature,stable,fix,docs,style,refactor,perf,test,chore,ci' # All branches should start with the given prefix
+          ignore: master,develop # Ignore exactly matching branch names from convention
+          min_length: 5 # Min length of the branch name
+          max_length: 50 # Max length of the branch name
 
   test-coverage:
     runs-on: ubuntu-latest
-    needs: enforce-branch-naming
-    if: needs.enforce-branch-naming.result == 'success'
+    needs: branch-naming-rules
+    if: needs.branch-naming-rules.result == 'success'
     steps:
       - uses: actions/checkout@v2
 
