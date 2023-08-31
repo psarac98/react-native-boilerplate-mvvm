@@ -13,7 +13,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test-coverage-only-changed": "jest --coverage=true --changedSince=origin/main",
-    "cm": "cz"
+    "cz": "cz"
   },
   "config": {
     "commitizen": {
