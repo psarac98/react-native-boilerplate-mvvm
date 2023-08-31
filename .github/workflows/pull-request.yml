@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Debug Info
+        run: echo "GITHUB_REF is $GITHUB_REF"
       - name: Check Branch Name Convention
         run: |
           branch_name=$(echo $GITHUB_REF | sed -e 's,.*/\(.*\),\1,')
