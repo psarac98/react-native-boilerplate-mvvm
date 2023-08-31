@@ -12,7 +12,13 @@
     "lint:fix": "eslint --fix src/*",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test-coverage-only-changed": "jest --coverage=true --changedSince=origin/main"
+    "test-coverage-only-changed": "jest --coverage=true --changedSince=origin/main",
+    "cm": "cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "jest": {
     "preset": "jest-expo",
