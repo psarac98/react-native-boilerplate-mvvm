@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Debug Info
-        run: echo "GITHUB_REF is $GITHUB_REF"
       - name: Check Branch Name Convention
         run: |
-          branch_name=$(echo $GITHUB_REF | sed -e 's,.*/\(.*\),\1,')
-          if [[ ! "$branch_name" =~ ^(feat|fix|docs|style|refactor|perf|test|ci|chore)/.*$ ]]; then
+          base_branch=$(echo ${{ github.event.pull_request.base.ref }} | sed -e 's,.*/\(.*\),\1,')
+          head_branch=$(echo ${{ github.event.pull_request.head.ref }} | sed -e 's,.*/\(.*\),\1,')
+          
+          if [[ ! "$head_branch" =~ ^(feat|fix|docs|style|refactor|perf|test|ci|chore)/.*$ ]]; then
             echo "Invalid branch name. Branch names must follow the convention."
             exit 1
           fi
