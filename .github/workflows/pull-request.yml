@@ -20,7 +20,7 @@ jobs:
     needs: branch-naming-rules
     if: needs.branch-naming-rules.result == 'success'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - uses: ArtiomTr/jest-coverage-report-action@v2
 
@@ -30,10 +30,10 @@ jobs:
     if: needs.test-coverage.result == 'success'
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 18
 
