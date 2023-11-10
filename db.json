@@ -1,0 +1,40 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Nature Hike in Central Park",
+      "description": "Explore the beauty of nature in Central Park with our guided hike.",
+      "date": "2023-11-15"
+    },
+    {
+      "id": "2",
+      "title": "Live Rock Concert at The O2 Arena",
+      "description": "Get ready for an electrifying night with the best rock bands at The O2 Arena.",
+      "date": "2023-11-20"
+    },
+    {
+      "id": "3",
+      "title": "Wine Tasting at Le Comptoir du Relais",
+      "description": "Indulge in a delightful wine tasting experience at Le Comptoir du Relais in Paris.",
+      "date": "2023-11-25"
+    },
+    {
+      "id": "4",
+      "title": "Broadway Musical Extravaganza",
+      "description": "Experience the magic of Broadway with a stunning musical performance.",
+      "date": "2023-11-02"
+    },
+    {
+      "id": "5",
+      "title": "Clubbing Night at Night Club",
+      "description": "Dance the night away at Night Club with great music and vibes.",
+      "date": "2023-11-10"
+    },
+    {
+      "id": "6",
+      "title": "Movie Night at AMC Theater",
+      "description": "Join us for a movie night at AMC Theater for the latest blockbuster screenings.",
+      "date": "2023-11-01"
+    }
+  ]
+}

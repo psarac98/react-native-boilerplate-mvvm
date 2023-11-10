@@ -3,7 +3,8 @@
     "baseUrl": "./src",
     "paths": {
       "~/*": ["*"]
-    }
+    },
+    "moduleResolution": "node"
   },
   "extends": "expo/tsconfig.base"
 }

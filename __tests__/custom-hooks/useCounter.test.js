@@ -1,11 +1,9 @@
 /** @format */
 
 import { act, renderHook } from '@testing-library/react-native';
-import useCounter from '~/custom-hooks/useCounter';
+import useCounter from '../../src/custom-hooks/useCounter';
 
-
-const renderCustomHook = (initialValue = undefined) =>
-  renderHook(() => useCounter(initialValue));
+const renderCustomHook = (initialValue = undefined) => renderHook(() => useCounter(initialValue));
 
 describe('Tests for useCounter hook', () => {
   test('if no initial value is passed to the hook, the initial counter value should be zero', () => {
