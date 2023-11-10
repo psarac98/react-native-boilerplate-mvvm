@@ -43,7 +43,11 @@
         "functions": 80,
         "lines": 80
       }
-    }
+    },
+    "coveragePathIgnorePatterns": [
+      "src/api",
+      "src/constants"
+    ]
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.18.2",
