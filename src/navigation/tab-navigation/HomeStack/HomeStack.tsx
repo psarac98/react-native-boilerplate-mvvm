@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FC } from 'react';
-import HomeScreen from '~/screens/HomeScreen';
-import { ScreenNavigationProps } from '../types';
+import HomeScreen from '../../../screens/HomeScreen';
+import { ScreenNavigationProps } from '../../types';
 
 const Stack = createNativeStackNavigator();
 

@@ -21,6 +21,9 @@
     }
   },
   "jest": {
+    "setupFiles": [
+      "./jest.setup.js"
+    ],
     "preset": "jest-expo",
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
@@ -40,25 +43,36 @@
         "functions": 80,
         "lines": 80
       }
-    }
+    },
+    "coveragePathIgnorePatterns": [
+      "src/api",
+      "src/constants",
+      "src/navigation"
+    ]
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "1.18.2",
     "@react-navigation/bottom-tabs": "^6.5.8",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
+    "@reduxjs/toolkit": "^1.9.5",
     "commitizen": "^4.3.0",
     "expo": "~49.0.7",
     "expo-status-bar": "~1.6.0",
-    "expo-updates": "~0.18.12",
+    "expo-updates": "~0.18.17",
     "iconsax-react-native": "^0.0.8",
     "jest": "^29.2.1",
     "jest-expo": "^49.0.0",
+    "json-server": "^0.17.4",
     "react": "18.2.0",
-    "react-native": "0.72.4",
+    "react-native": "0.72.6",
     "react-native-rename": "^3.2.13",
     "react-native-safe-area-context": "4.6.3",
     "react-native-screens": "~3.22.0",
-    "react-test-renderer": "18.2.0"
+    "react-redux": "^8.1.2",
+    "react-test-renderer": "18.2.0",
+    "redux-persist": "^6.0.0",
+    "whatwg-fetch": "^3.6.19"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
