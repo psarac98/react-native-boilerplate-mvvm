@@ -11,6 +11,8 @@ export type EventResponse = {
 
 export default (build: EndpointBuilder<BaseQueryFn, string, string>) =>
   build.query<Event[], void>({
-    query: () => '/events',
+    query: () => {
+      return '/events';
+    },
     transformResponse: (response: EventResponse[]) => mapApiResponseToEventModelArray(response),
   });

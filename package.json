@@ -46,7 +46,8 @@
     },
     "coveragePathIgnorePatterns": [
       "src/api",
-      "src/constants"
+      "src/constants",
+      "src/navigation"
     ]
   },
   "dependencies": {
